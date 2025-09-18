@@ -1,16 +1,15 @@
 <script>
-	import { isString } from "util";
+	
 
     
-    let {temperature = Number(2.2)} = $props();
-    let increment = 1
+    let {temperature = 2.2} = $props();
+    let increment = 0.2
     let char = "#"
 
-    let stringBar = ""
-    stringBar = () =>{
-        tempString = ""
-        for(i = 0; i < temperature; i+= increment){
-
+    function stringBar(){
+        let tempString = ""
+        for(let i = 0; i < temperature; i+= increment){
+            tempString += char
         }
         return tempString;
     }
@@ -20,7 +19,7 @@
 
 <div>
     <p>{temperature}</p>
-    <p>{stringBar}</p>
+    <p>{stringBar()}</p>
 </div>
 
 
